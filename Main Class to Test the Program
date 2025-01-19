@@ -1,1 +1,28 @@
+public class StudentRegistration {
+    public static void main(String[] args) {
+        // Immutable class for failed student
+        FailedStudent failedStudent = new FailedStudent("097", "SE-312L", "Software Construction and Development");
+        System.out.println("Failed Student Details:");
+        System.out.println("Roll Number: " + failedStudent.getRollNumber());
+        System.out.println("Subject Code: " + failedStudent.getSubjectCode());
+        System.out.println("Subject Name: " + failedStudent.getSubjectName());
+
+        // Mutable class for promoted student
+        PromotedStudent promotedStudent = new PromotedStudent("097", "SE-312L", "Software Construction and Development");
+        System.out.println("\nPromoted Student Details:");
+        System.out.println("Roll Number: " + promotedStudent.getRollNumber());
+        System.out.println("Subject Code: " + promotedStudent.getSubjectCode());
+        System.out.println("Subject Name: " + promotedStudent.getSubjectName());
+
+        // Updating details for promoted student
+        promotedStudent.setRollNumber("098");
+        promotedStudent.setSubjectCode("SE-313L");
+        promotedStudent.setSubjectName("Advanced Software Development");
+
+        System.out.println("\nUpdated Promoted Student Details:");
+        System.out.println("Roll Number: " + promotedStudent.getRollNumber());
+        System.out.println("Subject Code: " + promotedStudent.getSubjectCode());
+        System.out.println("Subject Name: " + promotedStudent.getSubjectName());
+    }
+}
 
