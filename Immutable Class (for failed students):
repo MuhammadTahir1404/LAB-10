@@ -1,0 +1,26 @@
+// Immutable class for failed students
+final class FailedStudent {
+    private final String rollNumber;
+    private final String subjectCode;
+    private final String subjectName;
+
+    // Constructor to initialize final fields
+    public FailedStudent(String rollNumber, String subjectCode, String subjectName) {
+        this.rollNumber = rollNumber;
+        this.subjectCode = subjectCode;
+        this.subjectName = subjectName;
+    }
+
+    // Getter methods to access the data
+    public String getRollNumber() {
+        return rollNumber;
+    }
+
+    public String getSubjectCode() {
+        return subjectCode;
+    }
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+}
