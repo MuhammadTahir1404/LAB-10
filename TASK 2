@@ -1,0 +1,68 @@
+// Immutable class to store constant Pi value
+final class CircleAndSphereConstants {
+    public static final double PI = 3.141592653589793;
+}
+
+// Mutable class to represent radius
+class Radius {
+    private double radius;
+
+    // Constructor to initialize the radius
+    public Radius(double radius) {
+        this.radius = radius;
+    }
+
+    // Getter method to retrieve the radius
+    public double getRadius() {
+        return radius;
+    }
+
+    // Setter method to change the radius
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+}
+
+// Main class to perform the calculations
+public class GeometryCalculator {
+
+    // Method to calculate the circumference of the circle
+    public static double calculateCircumference(Radius radius) {
+        return 2 * CircleAndSphereConstants.PI * radius.getRadius();
+    }
+
+    // Method to calculate the area of the circle
+    public static double calculateArea(Radius radius) {
+        return CircleAndSphereConstants.PI * Math.pow(radius.getRadius(), 2);
+    }
+
+    // Method to calculate the volume of the sphere
+    public static double calculateVolume(Radius radius) {
+        return (4.0 / 3) * CircleAndSphereConstants.PI * Math.pow(radius.getRadius(), 3);
+    }
+
+    // Method to calculate the surface area of the sphere
+    public static double calculateSurfaceArea(Radius radius) {
+        return 4 * CircleAndSphereConstants.PI * Math.pow(radius.getRadius(), 2);
+    }
+
+    public static void main(String[] args) {
+        // Create a mutable radius object
+        Radius radius = new Radius(5.0); // Initial radius = 5
+
+        // Calculate and display results using the mutable radius
+        System.out.println("Given Radius: " + radius.getRadius());
+        System.out.println("Circumference of the circle: " + calculateCircumference(radius));
+        System.out.println("Area of the circle: " + calculateArea(radius));
+        System.out.println("Volume of the sphere: " + calculateVolume(radius));
+        System.out.println("Surface area of the sphere: " + calculateSurfaceArea(radius));
+
+        // Modify radius and recalculate
+        radius.setRadius(10.0); // Update radius to 10
+        System.out.println("\nUpdated Radius: " + radius.getRadius());
+        System.out.println("Circumference of the circle: " + calculateCircumference(radius));
+        System.out.println("Area of the circle: " + calculateArea(radius));
+        System.out.println("Volume of the sphere: " + calculateVolume(radius));
+        System.out.println("Surface area of the sphere: " + calculateSurfaceArea(radius));
+    }
+}
